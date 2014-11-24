@@ -9,7 +9,7 @@ class GrahamScan
 private:
 	//An array of Nodes, Node* arr; or  vector<Node> arr; might be better! 
 	vector<Node> stack; //For hull-making
-	Node* graph; //Holds the entire graph
+	vector<Node> graph;
 	int numOfNodes;
 	
 public:
@@ -17,7 +17,7 @@ public:
 	~GrahamScan();
 	void readFile(string filename); //reads the file and calls required execution
 	void outputFile(string filename); //outputs file named   original_hull.txt
-	void turnDirection(int position1, int position2); //Calculates which turn we are taking
+	void turnDirection(Node prev1st, Node prev2nd, Node prev3rd); //Calculates which turn we are taking
 	void setNumOfNodes(int num);
 	int getNumOfNodes();
 	void scan(); //This is the main event
