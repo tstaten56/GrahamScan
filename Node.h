@@ -6,6 +6,7 @@ class Node
 {
 private:
 	double x, y; //The x/y values
+	double startX, startY;
 	double angle; //the tanget angle between this node and 0,0
 public:
 	Node(); //Probably won't need this
@@ -16,7 +17,9 @@ public:
 	double getY();
 	void setX(double xVal); //Used for updating the x/y after the "lowest" node is chosen based on its Y
 	void setY(double yVal); 
+	bool operator<(Node& thatNode) const; //for sorting
 	double getAngle();
-	void adjustCoords(double previousX, double previousY); //The node for 0,0 has been chosen, now we have to adjust all the other nodes to align with its previous coords
+	void adjustCoords(double xPos, double yPos); //The node for 0,0 has been chosen, now we have to adjust all the other nodes to align with its previous coords
+	void undoAdjustCoords();
 };
 #endif
