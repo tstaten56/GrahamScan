@@ -80,7 +80,6 @@ void GrahamScan::turnDirection(Node current, Node prev1st, Node prev2nd)
 	//Calcs which direction of a turn we are taking
 	//If a left turn, the new node is fine
 	//If a  right turn, pop off the previous node off the stack  Calc turnDirection again
-	//return ((b.x - a.x)*(c.y - a.y) - (b.y - a.y)*(c.x - a.x)) > 0;
 	int position = (prev1st.getX() - prev2nd.getX()) * (current.getY() - prev2nd.getY()) - (prev1st.getY() - prev2nd.getY()) * (current.getX() - prev2nd.getX());
 	if (position >= 0) //Left hand, add the node! Same line? add the node! (this could mess us up)
 	{
@@ -114,7 +113,6 @@ void GrahamScan::findLowestY()
 				xPos = graph[yLoop].getX(); //the lowest X is chosen when there is a tie in lowest Y
 				//xPos is unchanged if the new X is greater than xPos and the Y vals are the same
 			}
-			//xPos = graph[yLoop].getX();
 			lowY = graph[yLoop].getY();
 		}
 	}
