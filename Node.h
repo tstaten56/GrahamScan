@@ -8,7 +8,7 @@ private:
 	double x, y; //The x/y values
 	double angle; //the tanget angle between this node and 0,0
 public:
-	Node(); //Probably won't need this
+	Node();
 	Node(double xVal, double yVal);
 	~Node();
 	void calcAngle(); //used for sorting these into order for pushing onto the stack, determine left/right turn etc
