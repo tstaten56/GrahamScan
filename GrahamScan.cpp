@@ -69,8 +69,7 @@ void GrahamScan::outputFile(string filename)
 		myFile << stack.size() << "\n";
 		for (int outputLoop = 0; outputLoop < stack.size(); outputLoop++)
 		{
-			stack[outputLoop].undoAdjustCoords();
-			myFile << stack[outputLoop].getX() << "," << stack[outputLoop].getY() << "\n";
+			myFile << stack[outputLoop].getX() + savedX << "," << stack[outputLoop].getY() + savedY << "\n";
 		}
 	}
 	myFile.close();
@@ -110,15 +109,18 @@ void GrahamScan::findLowestY()
 	{
 		if (graph[yLoop].getY() <= lowY)
 		{
-			//xPos = graph[yLoop].getX();
-			lowY = graph[yLoop].getY();
 			if ((graph[yLoop].getY() == lowY) && (graph[yLoop].getX() < xPos) || (graph[yLoop].getY() < lowY))
 			{
 				xPos = graph[yLoop].getX(); //the lowest X is chosen when there is a tie in lowest Y
 				//xPos is unchanged if the new X is greater than xPos and the Y vals are the same
 			}
+			//xPos = graph[yLoop].getX();
+			lowY = graph[yLoop].getY();
 		}
 	}
+	//Save the X and Y original lowest Y values
+	savedX = xPos;
+	savedY = lowY;
 	//Next update all the values based on lowest Y
 	for (int updateLoop = 0; updateLoop < numOfNodes; updateLoop++)
 	{
@@ -148,9 +150,9 @@ void GrahamScan::scan()
 void ReadTest()
 {
 	GrahamScan ex;
-	string filename = "midtermTest.txt";
+	string filename = "test1.txt";
 	ex.readFile(filename);
-	ex.outputFile(filename); //both appear to be working with just the array. outputFile was changed to vector(Stack) but havent tested that
+	ex.outputFile(filename); 
 }
 
 void Test()
@@ -158,8 +160,8 @@ void Test()
 	ReadTest();
 }
 
-int main()
-{
-	Test();
-	return 0;
-}
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
