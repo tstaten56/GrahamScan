@@ -36,7 +36,7 @@ void Node::calcAngle()
 	{
 		if (x > 0)
 		{
-			angle = 5; //This will only work if there's only 1 node whose Y is equal to 0 and positive X
+			angle = 5;
 		}
 		else if (x == 0)
 		{
@@ -44,14 +44,14 @@ void Node::calcAngle()
 		}
 		else
 		{
-			angle = 0; //This will only work if there's only 1 node whose Y is equal to 0 and negative X
+			angle = 0; 
 		}
 	}
 	else
 	{
 		if (x > 0)
 		{
-			angle = y / x; //Not sure if this is right yet, it was in my notes like this though
+			angle = y / x; 
 		}
 		else
 		{ //X is negative, we'll make it positive and larger than the rest 
@@ -81,9 +81,3 @@ void Node::adjustCoords(double xPos, double  yPos)
 	x = x - xPos;
 	y = y - yPos;
 }
-//
-//void Node::undoAdjustCoords()
-//{
-//	x += startX;
-//	y += startY;
-//}
