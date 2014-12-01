@@ -7,7 +7,6 @@ using namespace std;
 class GrahamScan
 {
 private:
-	//An array of Nodes, Node* arr; or  vector<Node> arr; might be better! 
 	vector<Node> stack; //For hull-making
 	vector<Node> graph;
 	int numOfNodes;
