@@ -77,15 +77,13 @@ void Node::setY(double yVal)
 
 void Node::adjustCoords(double xPos, double  yPos)
 {
-	startX = xPos;
-	startY = yPos;
 	//The node for 0,0 has been chosen, now we have to adjust all the other nodes to align with its previous coords
-	x = x - startX;
-	y = y - startY;
+	x = x - xPos;
+	y = y - yPos;
 }
-
-void Node::undoAdjustCoords()
-{
-	x += startX;
-	y += startY;
-}
+//
+//void Node::undoAdjustCoords()
+//{
+//	x += startX;
+//	y += startY;
+//}
