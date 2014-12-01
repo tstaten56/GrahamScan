@@ -7,10 +7,10 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		string file;
-		int vert, horz;
 		file = argv[1];
 		GrahamScan ex;
 		ex.readFile(file);
+		ex.outputFile(file);
 	}
 	else
 	{
