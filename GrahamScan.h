@@ -11,6 +11,7 @@ private:
 	vector<Node> stack; //For hull-making
 	vector<Node> graph;
 	int numOfNodes;
+	int savedX, savedY;
 	
 public:
 	GrahamScan();
